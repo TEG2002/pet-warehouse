@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ระบบจัดการคลังสินค้าอาหารสัตว์ (Pet Warehouse Management)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">🐾</div>
+        <div class="brand-text">
+          <div class="brand-title-wrap">
+            <h1>ระบบจัดการคลังสินค้าอาหารสัตว์</h1>
+            <span class="brand-badge">Warehouse v2.0</span>
+          </div>
+          <p class="brand-sub">คลังกลาง + 3 สาขา · ขออนุมัติเบิกสินค้าแบบเรียลไทม์ · ตัดสต็อกอัตโนมัติ</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="syncStatusBadge" class="sync-badge offline" role="status">
+          <span class="sync-dot">⚪</span><span>โหมดออฟไลน์ (ยังไม่ตั้งค่า Google Sheet)</span>
+        </span>
+        <button id="themeToggleBtn" class="btn-icon" title="สลับโหมดมืด/สว่าง" aria-label="สลับโหมดมืด/สว่าง">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="resetDataBtn" class="btn-outline btn-sm" title="รีเซ็ตข้อมูลตัวอย่าง">
+          <span>🔄 รีเซ็ตข้อมูล</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="role-bar-wrapper">
+      <div class="role-bar-container">
+        <span class="role-bar-label">มุมมองการทำงาน:</span>
+        <nav class="roles-nav" id="roleNav" aria-label="สลับบทบาท"></nav>
+      </div>
+    </div>
+
+    <main id="app" class="main-content"></main>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Unified Slide-Over Transaction Drawer (แผงสไลด์บันทึกงานคลัง) -->
+  <div id="drawerBackdrop" class="drawer-backdrop hidden" aria-hidden="true">
+    <div class="drawer-panel" id="drawerPanel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-header">
+        <div class="drawer-title-wrap">
+          <span class="drawer-icon" id="drawerIcon">📥</span>
+          <div>
+            <h3 class="drawer-title" id="drawerTitle">นำเข้าสต็อกสินค้า (Stock In)</h3>
+            <p class="drawer-subtitle" id="drawerSubtitle">บันทึกรับสินค้าเข้าคลังกลาง พร้อมระบุล็อตและวันหมดอายุ</p>
+          </div>
+        </div>
+        <button type="button" class="btn-icon drawer-close-btn" id="closeDrawerBtn" title="ปิดแผง (Esc)" aria-label="ปิด">✕</button>
+      </div>
+      <div class="drawer-body" id="drawerBody">
+        <!-- Dynamic Form Content injected by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- General Confirmation Modal Container -->
+  <div id="modalContainer" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <h3 id="modalTitle" class="modal-title">ยืนยันการดำเนินการ</h3>
+      <p id="modalBody" class="modal-body"></p>
+      <div class="modal-actions">
+        <button id="modalCancelBtn" class="btn btn-secondary">ยกเลิก</button>
+        <button id="modalConfirmBtn" class="btn btn-primary">ยืนยัน</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
