@@ -1,0 +1,19 @@
+{
+  "name": "pet-warehouse-v3",
+  "version": "3.0.0",
+  "description": "ระบบจัดการคลังสินค้าอาหารสัตว์ (Pet Warehouse Management System)",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "warehouse",
+    "inventory",
+    "management",
+    "pet-warehouse",
+    "vercel"
+  ],
+  "author": "TEG2002",
+  "license": "MIT"
+}
