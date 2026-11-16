@@ -46,3 +46,4 @@ vercel --prod
 ## 🔒 การเชื่อมต่อ Google Sheets บน Vercel
 - ไฟล์ [`script.js`](file:///c:/woking/pet-warehouse-v2/script.js) ได้เชื่อมต่อกับ Google Apps Script Web App ผ่าน HTTPS เรียบร้อยแล้ว
 - เมื่อเปิดผ่านโดเมน Vercel (`https://xxx.vercel.app`) ระบบจะสามารถเรียกข้อมูลและซิงค์กับ Google Sheet ได้แบบ 100% ไม่มีปัญหาเรื่อง Mixed Content หรือ CORS
+
